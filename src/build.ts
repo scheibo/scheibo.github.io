@@ -16,7 +16,7 @@ const SRC = path.join(ROOT, 'src');
 
 const renderer = new site.page.Renderer({
   public: PUBLIC,
-  analytics: 'G-TODO',
+  analytics: 'G-FTDLMEJYCL',
   description: 'Kirk Scheibelhut\'s personal blog',
   url: 'https://blog.scheibo.com',
   stylesheet: path.join(SRC, 'index.css'),
