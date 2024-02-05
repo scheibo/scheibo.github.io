@@ -1,0 +1,91 @@
+# Why Zig?
+
+TODO: only in context of pkmn!
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices, tortor sed iaculis
+mollis, odio ex porta ante, ac malesuada est elit eu elit. Etiam dapibus quam id lorem condimentum
+mollis. Donec non dolor ipsum. Praesent vel ultrices ex. Donec nibh dui, hendrerit a erat et,
+tincidunt semper orci. Cras in lectus sapien. Proin vehicula eros varius, eleifend neque laoreet.
+
+- control
+- fast compile time
+- hot reloading
+- very careful about allocations
+- SIMPLICITY
+- all the power you can get from C/C++/asm
+- "Assembler DSL"
+- portability - C is lingua franca, Zig is better C
+
+C/Zig - portability, low level, speed, simple Rust - complex project (web browser?), security
+critical
+
+https://news.ycombinator.com/item?id=29606523 https://matklad.github.io/2020/09/20/why-not-rust.html
+https://matklad.github.io/2023/03/26/zig-and-rust.html
+
+hierarchy - avoid making the user install runtimes, use whatever is intended for the platform/what
+has libraries provided, **use high level language until you have to write very unidiomatic code for
+performance**, dont waste too much time futzing over a language, just write
+
+??? Paragraph in why zig about how contributing
+- donation, project, evangelizing, small fixes, running on master reporting bugs
+
+<https://alexgaynor.net/2023/oct/02/defining-the-memory-safety-problem/>
+<https://github.com/johnthagen/min-sized-rust>
+<https://rustwasm.github.io/docs/book/reference/code-size.html> domain where trading correctness for
+speed is desirable
+
+
+"Simplicity is prerequisite for reliability." - Edsger Dijkstra
+
+---
+
+
+Come up several times before
+
+languages are tools. One one hand, language choice is a boring distraction --- focus on the end
+product and not the tools used to make it. On the other, the language can convey /shorthand
+Languages make some things easier and have certain strengths and
+
+Languages should not be evaluated in a vacuum, they should be evaluated in the context of the
+problem being solved. Comparing a specific data structure or algorithm out of context is similarly
+useless - sometimes an insertion sort is actually the best choice
+
+Could link to PS paragraph in @pkmn and justify its use, explain how tried to make typescript work
+but would be too dramatically different from regular TS to qualify + if writing from scratch why not
+look more broadly. Still need to run in browser but WASM opens things up more there.
+
+Initial reaction is C - lingua franca, familiar, and feasible with certain tools but also a lot of
+things are annoying (building, macros, namespacing, UB) and there are a lot of promising
+competitors. no GC - rule out Java and Go etc despite very familiar - inevitably end up needing to
+tune and fight with the GC for performance.
+
+Why not rust? Memory safety not important (need a threat model), bounds checking on arrays, binary
+size, handles not pointers anyway. Just makes things harder for no benefit. Large number of unsafe
+blocks required to get exactly the code I wanted. rust is also like C++ in that is unattractive due
+to complexity, build times
+
+Correctness isn't even necessarily important in all use cases, speed is more important.
+
+Tangent on complexity vs simplicity. Go brought this to the forefront and maybe is too simple on
+places but ultimately you spend more time on the problem at hand and not the language.
+
+Zig
+- few super novel ideas on top of just polishing C BUT just polishing C has a lot of value AND the
+  ideas that do exist often carry a lot of weight https://ziglang.org/learn/overview/
+- simple, readable (partly due to no hidden control flow partly due to linting, partly due to
+  simplicity)
+- very easy to never allocate
+- low level means it's easier to know what the machine will do
+- ambitious
+- path forward to very fast compiler
+- formatter, linting (compiler is linter), testing, build tool, package manager all built-in
+  compared to C/C++
+- best in class cross compilation
+- compile time for multiple different features
+- governance and community. Lots of great projects (tigerbeetle, ghostty, bun) all pushing the
+  envelope and looking for OPTIMAL software.
+
+https://zackoverflow.dev/writing/unsafe-rust-vs-zig/
+
+
+Would consider a different language for a different project

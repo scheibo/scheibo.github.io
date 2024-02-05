@@ -1,0 +1,54 @@
+:root {
+  --code: "Roboto Mono", "Monaco", monospace;
+}
+
+aside.update > .title {
+  text-transform: uppercase;
+}
+
+.updated {
+  font-style: italic;
+}
+
+span.email b { display: none; }
+span.email { font-family: monospace; }
+
+.post time, #post header a time, .updated {
+  color: rgb(var(--fg-base) / 50%);
+}
+#post header a > time::before,
+#post header a > em > time::before  {
+  color: var(--fg-color);
+  font-style: normal;
+  content: '❮ ';
+}
+#post header > .update {
+  font-size: smaller;
+}
+#post header {
+  width: min(80ch, 100%);
+  margin: 2.5rem auto 0;
+  padding: 0 2ch;
+  font-weight: normal;
+  text-align: left;
+}
+
+#log h1 {
+  font-family: var(--code);
+  text-decoration: none;
+}
+
+#log h1, #post h1 {
+  font-weight: bold;
+  font-size: 2em;
+  margin-block: 0;
+}
+#log h2, #post h2 {
+  margin: 0.33em 0;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+#log h3, #post h3 {
+  margin: 1em 0;
+  font-size: 1.3em;
+}

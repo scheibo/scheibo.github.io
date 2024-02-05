@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "dependencies": {
+    "@types/node": "^20.11.10",
+    "favicons": "^7.1.5",
+    "site": "github:scheibo/static",
+    "source-map-support": "^0.5.21",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@pkmn/eslint-config": "^6.5.0",
+    "@untitaker/hyperlink": "^0.1.32",
+    "eslint": "^8.56.0",
+    "stylelint": "^16.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "scripts": {
+    "lint": "eslint src --cache --ext ts && stylelint src/**/*.css && hyperlink public --check-anchors",
+    "fix": "eslint src --fix --ext ts && stylelint --fix src/**/*.css",
+    "clean": "rm -rf public build .tsbuildinfo .eslintcache",
+    "compile": "tsc -p .",
+    "build": "npm run compile && node build/build",
+    "start": "node build/server",
+    "test": "npm run build && npm run lint"
+  },
+  "eslintConfig": {
+    "extends": "@pkmn",
+    "overrides": [{
+      "files": ["src/server.ts", "src/build.ts"],
+      "rules": {"@typescript-eslint/no-var-requires": "off"}
+    }]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-rational-order"
+    ],
+    "rules": {
+      "rule-empty-line-before": null,
+      "selector-class-pattern": null
+    }
+  }
+}
